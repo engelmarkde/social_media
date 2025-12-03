@@ -53,7 +53,7 @@ export const PublicComponent = () => {
         ><br />
           {t(
             'check_n8n',
-            'Check out our N8N custom node for Postiz.'
+            'Check out our N8N.'
           )}
         </a>
       </div>
