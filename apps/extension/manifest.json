@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "MDK",
+  "name": "Postiz",
   "description": "Your ultimate social media scheduling tool",
   "options_ui": {
     "page": "src/pages/options/index.html"
