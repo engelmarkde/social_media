@@ -12,7 +12,7 @@ import { GithubProvider } from '@gitroom/frontend/components/auth/providers/gith
 import { useRouter, useSearchParams } from 'next/navigation';
 import { LoadingComponent } from '@gitroom/frontend/components/layout/loading';
 import clsx from 'clsx';
-import { GoogleProvider } from '@gitroom/frontend/components/auth/providers/google.provider';
+
 import { OauthProvider } from '@gitroom/frontend/components/auth/providers/oauth.provider';
 import { useFireEvents } from '@gitroom/helpers/utils/use.fire.events';
 import { useVariables } from '@gitroom/react/helpers/variable.context';
@@ -155,16 +155,12 @@ export function RegisterAfter({
             <GithubProvider />
           ) : (
             <div className="gap-[5px] flex flex-col">
-              {genericOauth && isGeneral ? (
-                <OauthProvider />
-              ) : (
-                <GoogleProvider />
-              )}
+              {genericOauth && isGeneral && <OauthProvider />}
               {!!neynarClientId && <FarcasterProvider />}
               {billingEnabled && <WalletProvider />}
             </div>
           ))}
-        {!isAfterProvider && (
+        {!isAfterProvider && (genericOauth || !!neynarClientId || billingEnabled || !isGeneral) && (
           <div className="h-[20px] mb-[24px] mt-[24px] relative">
             <div className="absolute w-full h-[1px] bg-fifth top-[50%] -translate-y-[50%]" />
             <div
