@@ -22,10 +22,14 @@ export default async function AuthLayout({
       <div className="absolute left-[20%] top-1/2 -translate-y-1/2 z-[1] hidden lg:flex items-center justify-center">
         <Image
           src="/photo.jpg"
-          width={700}
-          height={700}
+          width={850}
+          height={850}
           alt="Decorative image"
-          className="rounded-lg object-cover"
+          className="object-cover"
+          style={{
+            maskImage: 'radial-gradient(ellipse 50% 50% at center, black 40%, transparent 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 50% 50% at center, black 40%, transparent 100%)',
+          }}
         />
       </div>
       <div className="relative z-[1] px-3 lg:pr-[100px] xs:mt-[70px] flex justify-center lg:justify-end items-center h-[100vh] w-[100vw] overflow-hidden">
